@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NYAYAAI Platform Manual & Feature Guide</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.6;
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+    .cover-banner {
+      background: linear-gradient(135deg, #0b192c 0%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 36px 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-bottom: 4px solid #c5a059;
+    }
+    .cover-badge {
+      display: inline-block;
+      background: rgba(197, 160, 89, 0.2);
+      color: #fef08a;
+      border: 1px solid #c5a059;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    .cover-banner h1 {
+      font-size: 26pt;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+    .cover-tagline {
+      font-size: 12pt;
+      color: #c5a059;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .cover-desc {
+      font-size: 10pt;
+      color: #cbd5e1;
+      max-width: 650px;
+      line-height: 1.5;
+    }
+    .cover-footer-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 8.5pt;
+      color: #94a3b8;
+    }
+
+    h1.doc-title {
+      display: none; /* Handled by cover banner */
+    }
+    h2.section-title {
+      font-size: 14pt;
+      color: #0b192c;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      page-break-after: avoid;
+    }
+    h3.subsection-title {
+      font-size: 11pt;
+      color: #1e3a8a;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      page-break-after: avoid;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 12px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    code {
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 1px 4px;
+      border-radius: 4px;
+      font-size: 9pt;
+    }
+    pre {
+      background: #0b192c;
+      color: #f8fafc;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 8.5pt;
+      line-height: 1.45;
+      overflow-x: auto;
+      page-break-inside: avoid;
+      margin: 12px 0;
+    }
+    pre code {
+      background: transparent;
+      color: #f8fafc;
+      padding: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 8.5pt;
+      page-break-inside: avoid;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 7px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f8fafc;
+      color: #0b192c;
+      font-weight: 600;
+      border-bottom: 2px solid #94a3b8;
+    }
+    tr:nth-child(even) td {
+      background: #fdfdfd;
+    }
+    hr.divider {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 24px 0;
+    }
+    a {
+      color: #1e3a8a;
+      text-decoration: none;
+    }
+    .footer-disclaimer {
+      margin-top: 40px;
+      padding-top: 15px;
+      border-top: 1px solid #cbd5e1;
+      font-size: 8pt;
+      color: #64748b;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover-banner">
+    <div class="cover-badge">Official Architecture & User Manual</div>
+    <h1>NYAYAAI</h1>
+    <div class="cover-tagline">Research. Analyze. Verify. Draft.</div>
+    <div class="cover-desc">
+      Comprehensive technical handbook, advocate user guide, and feature specification for the NYAYAAI Legal Intelligence Platform. Includes full dual-law compliance (BNS / BNSS / BSA vs IPC / CrPC / IEA), cloud deployment procedures, and ethical guidelines.
+    </div>
+    <div class="cover-footer-meta">
+      <div><strong>Version:</strong> 1.0.0 Production Release &bull; <strong>Target Jurisdiction:</strong> Republic of India</div>
+      <div><strong>Date:</strong> September 2026 &bull; <strong>Tech Stack:</strong> Next.js 14, TypeScript, Tailwind, Gemini</div>
+    </div>
+  </div>
+
+  <h1 class="doc-title">NYAYAAI: Complete Platform Architecture, User Guide & Feature Manual</h1>
+<p><strong>AI-Powered Indian Legal Intelligence Platform</strong>  </p>
+<p><em>Tagline: "Research. Analyze. Verify. Draft."</em>  </p>
+<p><em>Version: 1.0.0 (Production Release) — September 2026</em></p>
+<hr class="divider" />
+<h2 class="section-title">1. Executive Summary & Vision</h2>
+<p><strong>NYAYAAI</strong> is an enterprise-grade AI legal intelligence platform designed specifically for Indian advocates, senior counsels, law chambers, and legal scholars. The platform tackles the fundamental operational bottlenecks in Indian legal practice:</p>
+<ol>
+<li><strong>The Dual-Law Era</strong>: Seamless transition and comparative analysis between India's historic criminal codes (<strong>IPC 1860</strong>, <strong>CrPC 1973</strong>, <strong>IEA 1872</strong>) and the 2023 enactments (<strong>Bharatiya Nyaya Sanhita [BNS]</strong>, <strong>Bharatiya Nagarik Suraksha Sanhita [BNSS]</strong>, and <strong>Bharatiya Sakshya Adhiniyam [BSA]</strong>).</li>
+<li><strong>Zero-Hallucination Legal Research</strong>: A 5-stage research pipeline producing 9-part structured legal briefs with verified statutory and precedential citations.</li>
+<li><strong>Citation & Precedent Verification</strong>: Verification of Supreme Court and High Court citations (AIR, SCC, SCR) with real-time "Good Law", "Partially Verified", and "Overruled" status tags.</li>
+<li><strong>Judgment Analyzer</strong>: Automated segregation of binding <strong>Ratio Decidendi</strong> from persuasive <strong>Obiter Dicta</strong>, with dual-mode views for Senior Counsels and Junior Advocates.</li>
+<li><strong>Procedural Case Management</strong>: Interactive visual timelines tracking cases from initial filing to final decree.</li>
+<li><strong>Intelligent Legal Drafting Studio</strong>: 14 standardized Indian legal templates with multi-format export (.DOCX, .PDF, .TXT).</li>
+<li><strong>Bar Council of India (BCI) Compliance</strong>: Non-solicitation adherence, strict client confidentiality, and cryptographic SHA-256 audit logging.</li>
+</ol>
+<hr class="divider" />
+<h2 class="section-title">2. How to Run the Platform</h2>
+<h3 class="subsection-title">2.1 Local Developer Environment</h3>
+<h4>Prerequisites:</h4>
+<ul>
+<li><strong>Node.js</strong>: v18.17.0+ or v20.x or v22.x</li>
+<li><strong>npm</strong>: v9+ or v10+</li>
+<li><strong>Git</strong>: Installed and configured</li>
+</ul>
+<h4>Quick Start Commands:</h4>
+<pre><code>
+# 1. Clone the repository
+git clone https://github.com/SUBHAPRIYAM-dev/-NyayaAI-AI-Legal-Research-Case-Intelligence-Platform-for-Indian-Advocates-.git
+cd -NyayaAI-AI-Legal-Research-Case-Intelligence-Platform-for-Indian-Advocates-
+
+# 2. Install dependencies
+npm install
+
+# 3. Start local development server
+npm run dev
+</code></pre>
+<p>Open <strong>http://localhost:3000</strong> in your web browser. The app runs immediately with pre-loaded demo data.</p>
+<h4>Quality & Verification Commands:</h4>
+<ul>
+<li><code>npm test</code> — Executes the complete Vitest test suite (19/19 tests passing).</li>
+<li><code>npm run typecheck</code> — Validates TypeScript types across the entire project (0 errors).</li>
+<li><code>npm run build</code> — Compiles the optimized Next.js production build for all 35 routes.</li>
+<li><code>npm run db:seed</code> — Seeds the in-memory database with 22 statutes, 22 judgments, 22 cases, 10 documents, and 10 research sessions.</li>
+</ul>
+<hr class="divider" />
+<h3 class="subsection-title">2.2 Cloud Deployment on Vercel</h3>
+<ol>
+<li>Log in to <a href="https://vercel.com">vercel.com</a> using your GitHub credentials.</li>
+<li>Click <strong>"Add New..."</strong> &rarr; <strong>"Project"</strong>.</li>
+<li>Import the repository: <code>-NyayaAI-AI-Legal-Research-Case-Intelligence-Platform-for-Indian-Advocates-</code>.</li>
+<li><strong>Important</strong>: Change the <strong>Project Name</strong> in Vercel to <code>nyayaai</code> (Vercel disallows names starting or ending with hyphens).</li>
+<li>In <strong>Environment Variables</strong>, add:</li>
+</ol>
+<ul>
+<li><code>JWT_SECRET</code>: <code>nyayaai-super-secure-jwt-secret-key-32-chars-min-change-in-prod</code></li>
+<li><code>COOKIE_NAME</code>: <code>nyayaai_session</code></li>
+<li><code>NODE_ENV</code>: <code>production</code></li>
+<li><code>GEMINI_API_KEY</code>: <em>(Optional)</em> Add your Google AI Studio key, or leave blank to run in offline Demo AI Mode.</li>
+</ul>
+<ol>
+<li>Click <strong>Deploy</strong>. Vercel compiles and hosts the app on a live HTTPS URL.</li>
+</ol>
+<hr class="divider" />
+<h2 class="section-title">3. How a User Operates NYAYAAI: Step-by-Step User Journey</h2>
+<h3 class="subsection-title">Step 1: Authentication & Chambers Setup</h3>
+<ul>
+<li><strong>1-Click Demo Login</strong>: Visit <code>/login</code> and click either:</li>
+<li><strong>"Demo Advocate"</strong>: Instantly signs in as Adv. Arjun Sharma (Senior Partner, Supreme Court practice).</li>
+<li><strong>"Demo Firm Admin"</strong>: Signs in as Chambers Administrator with system health telemetry and audit access.</li>
+<li><strong>New Advocate Registration</strong>: Register at <code>/register</code> and complete the 5-step Onboarding Wizard at <code>/onboarding</code> (Bar Council enrollment, chambers structure, practice areas, citation style, and confidentiality settings).</li>
+</ul>
+<h3 class="subsection-title">Step 2: Navigating the Executive Dashboard (<code>/dashboard</code>)</h3>
+<ul>
+<li>Use the <strong>Global Command Palette</strong> (<code>Cmd+K</code> or <code>Ctrl+K</code>) to jump directly to any matter, statute, or tool.</li>
+<li>View upcoming Supreme Court and High Court hearing dates, recent research queries, active litigation matters, and AI quota meters.</li>
+</ul>
+<h3 class="subsection-title">Step 3: 3-Column AI Legal Research Engine (<code>/research</code>)</h3>
+<ul>
+<li><strong>Left Column</strong>: Filter past research sessions by practice area (Criminal, Corporate, Constitutional, Taxation).</li>
+<li><strong>Center Column</strong>: Enter any natural language legal question (e.g., <em>"Anticipatory bail standards under BNSS Section 482 vs CrPC Section 438"</em>).</li>
+<li><strong>5-Stage Progress Visualizer</strong>:</li>
+</ul>
+<ol>
+<li><em>Understanding legal proposition...</em></li>
+<li><em>Identifying jurisdiction & active statutes...</em></li>
+<li><em>Searching statutory provisions (BNS / IPC)...</em></li>
+<li><em>Verifying citations against official reporters...</em></li>
+<li><em>Compiling structured legal brief...</em></li>
+</ol>
+<ul>
+<li><strong>9-Part Structured Legal Brief</strong>:</li>
+</ul>
+<ol>
+<li><strong>Legal Issue</strong>: Clear statement of the legal controversy.</li>
+<li><strong>Short Answer</strong>: Direct affirmative or negative answer under current law.</li>
+<li><strong>Applicable Law</strong>: Dual statutory provisions (BNS vs IPC).</li>
+<li><strong>Relevant Authorities</strong>: Reported Supreme Court and High Court citations.</li>
+<li><strong>In-Depth Analysis</strong>: Structured IRAC (Issue, Rule, Application, Conclusion) legal reasoning.</li>
+<li><strong>Supporting Authorities</strong>: Favorable precedents with bench holdings.</li>
+<li><strong>Contrary Authorities</strong>: Distinguishable cases and conflicting precedents.</li>
+<li><strong>Practical Considerations</strong>: Filing tactics, limitation issues, and evidentiary prerequisites.</li>
+<li><strong>Unresolved Questions</strong>: Gray areas or matters pending before a Larger Bench.</li>
+</ol>
+<ul>
+<li><strong>Actions</strong>: One-click <strong>Copy Brief</strong>, <strong>Export (.TXT)</strong>, <strong>Create Case Docket</strong>, or <strong>Prepare Draft</strong>.</li>
+</ul>
+<h3 class="subsection-title">Step 4: Citation & Precedent Verification (<code>/citation-checker</code>)</h3>
+<ul>
+<li>Input a case name or citation (e.g., <code>2024 INSC 412</code>).</li>
+<li>Inspect verification status:</li>
+<li><code>VERIFIED</code> — Good Law, binding under Article 141 of the Constitution.</li>
+<li><code>PARTIALLY VERIFIED</code> — Distinguished on facts or limited statutory scope.</li>
+<li><code>UNVERIFIED</code> — Overruled or non-existent citation (hallucination safeguard).</li>
+</ul>
+<h3 class="subsection-title">Step 5: Judgment Analyzer & Ratio Decidendi Extractor (<code>/judgment-analyzer</code>)</h3>
+<ul>
+<li>Upload or select any lengthy judgment.</li>
+<li>Automatically segregates:</li>
+<li><strong>Ratio Decidendi</strong>: The binding legal principle.</li>
+<li><strong>Obiter Dicta</strong>: Incidental judicial remarks.</li>
+<li><strong>Submissions</strong>: Appellant vs Respondent arguments.</li>
+<li>Switch between <strong>Senior Chambers Brief</strong> and <strong>Junior Advocate Walkthrough</strong>.</li>
+</ul>
+<h3 class="subsection-title">Step 6: Case Docket & Visual Procedural Timeline (<code>/cases</code> & <code>/cases/[id]</code>)</h3>
+<ul>
+<li>Manage case metadata: CNR Number, Court Hall, Bench, Stage, and Next Hearing Date.</li>
+<li>Interactive chronological roadmap:</li>
+<p>  <code>Filing</code> &rarr; <code>Notice Issued</code> &rarr; <code>Written Statement</code> &rarr; <code>Framing of Issues</code> &rarr; <code>Evidence</code> &rarr; <code>Final Hearing</code> &rarr; <code>Judgment & Decree</code>.</p>
+<li>Log new orders and adjourned hearing dates directly into the case timeline.</li>
+</ul>
+<h3 class="subsection-title">Step 7: Case Strategy & Risk Matrix (<code>/case-strategy</code>)</h3>
+<ul>
+<li>Evaluate litigation posture across 4 quadrants:</li>
+<li><strong>Procedural Risk</strong>: Limitation periods, CPC Order VII Rule 11 grounds.</li>
+<li><strong>Precedent Risk</strong>: Adverse rulings, pending Larger Bench references.</li>
+<li><strong>Evidentiary Risk</strong>: Electronic evidence certificates (BSA Section 63).</li>
+<li><strong>Financial Risk</strong>: Costs under CPC §35A, deposit requirements.</li>
+</ul>
+<h3 class="subsection-title">Step 8: Document Vault & Contextual AI Reader (<code>/documents</code>)</h3>
+<ul>
+<li>Split-screen reader: view contracts, petitions, and orders on the left.</li>
+<li>Contextual AI actions on the right: <strong>Find Legal Risks</strong>, <strong>Find Provisions</strong>, <strong>Find Authorities</strong>, and <strong>Explain Clause</strong>.</li>
+</ul>
+<h3 class="subsection-title">Step 9: Legal Drafting Studio (<code>/drafting</code>)</h3>
+<ul>
+<li>Choose from <strong>14 standardized Indian legal templates</strong>:</li>
+</ul>
+<ol>
+<li>Anticipatory Bail Petition (BNSS §482 / CrPC §438)</li>
+<li>Regular Bail Application (BNSS §480 / CrPC §437)</li>
+<li>Legal Notice for Cheque Dishonour (NI Act §138)</li>
+<li>Commercial Suit Plaint (Commercial Courts Act)</li>
+<li>Writ Petition (Constitution Art. 226 / 32)</li>
+<li>Special Leave Petition (Constitution Art. 136)</li>
+<li>Written Statement / Defence (CPC Order VIII)</li>
+<li>Section 9 Interim Measures (Arbitration Act §9)</li>
+<li>Caveat Petition (CPC §148A)</li>
+<li>Statement of Claim (Arbitration Act §23)</li>
+<li>Criminal Revision Application (BNSS §438 / CrPC §397)</li>
+<li>Consumer Dispute Complaint (CPA 2019 §35)</li>
+<li>Trademark Opposition Notice (Trade Marks Act §21)</li>
+<li>Criminal Quashing Petition (BNSS §528 / CrPC §482)</li>
+</ol>
+<ul>
+<li>Select drafting tone: <em>Aggressive</em>, <em>Neutral</em>, <em>Conciliatory</em>, or <em>Firm</em>.</li>
+<li>Export in 1-click to <strong>.DOCX</strong>, <strong>.PDF</strong>, and <strong>.TXT</strong>.</li>
+</ul>
+<h3 class="subsection-title">Step 10: Firm Workspace & Role-Based Access Control (<code>/firm</code>)</h3>
+<ul>
+<li>Manage chambers team members with roles: <code>Partner</code>, <code>Associate</code>, and <code>Admin</code>.</li>
+<li>Invite colleagues and assign matter permissions.</li>
+</ul>
+<h3 class="subsection-title">Step 11: Billing & AI Quota Metering (<code>/billing</code>)</h3>
+<ul>
+<li>Real-time consumption meters for Queries, Documents, Drafts, Citations, and Tokens.</li>
+<li>Compare tiers: Chambers Starter, Senior Advocate Pro, Enterprise Chambers.</li>
+</ul>
+<h3 class="subsection-title">Step 12: Enterprise Administration Console (<code>/admin</code>)</h3>
+<ul>
+<li>Real-time subsystem health status (Database, Redis, Gemini AI, Vector Store, Auth).</li>
+<li>Runtime feature flag toggles.</li>
+<li>Immutable SHA-256 cryptographic audit logs with tenant filtering.</li>
+</ul>
+<hr class="divider" />
+<h2 class="section-title">4. Complete Feature Inventory (35 Routes)</h2>
+<table><thead><tr>
+<th>Module</th>
+<th>Route</th>
+<th>Type</th>
+<th>Core Functionality</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Marketing Landing Page</strong></td>
+<td><code>/</code></td>
+<td>Page</td>
+<td>Showcase, BNS comparison, pricing, trust badges</td>
+</tr>
+<tr>
+<td><strong>Authentication</strong></td>
+<td><code>/login</code>, <code>/register</code>, <code>/forgot-password</code></td>
+<td>Pages</td>
+<td>JWT auth, bcrypt passwords, demo shortcuts</td>
+</tr>
+<tr>
+<td><strong>Onboarding Wizard</strong></td>
+<td><code>/onboarding</code></td>
+<td>Page</td>
+<td>5-step chambers setup wizard</td>
+</tr>
+<tr>
+<td><strong>Executive Dashboard</strong></td>
+<td><code>/dashboard</code></td>
+<td>Page</td>
+<td>Hearings, dockets, research feed, AI quota meters</td>
+</tr>
+<tr>
+<td><strong>AI Legal Research</strong></td>
+<td><code>/research</code></td>
+<td>Page</td>
+<td>3-column workspace, 5-stage simulation, IRAC brief</td>
+</tr>
+<tr>
+<td><strong>Citation Checker</strong></td>
+<td><code>/citation-checker</code></td>
+<td>Page</td>
+<td>Precedent verifier (AIR, SCC), Good Law badges</td>
+</tr>
+<tr>
+<td><strong>Judgment Analyzer</strong></td>
+<td><code>/judgment-analyzer</code></td>
+<td>Page</td>
+<td>Ratio Decidendi vs Obiter Dicta, dual persona view</td>
+</tr>
+<tr>
+<td><strong>Litigation Dockets</strong></td>
+<td><code>/cases</code>, <code>/cases/[id]</code></td>
+<td>Pages</td>
+<td>CNR search, procedural timeline, event logger</td>
+</tr>
+<tr>
+<td><strong>Case Strategy</strong></td>
+<td><code>/case-strategy</code></td>
+<td>Page</td>
+<td>4-factor risk matrix, tactical recommendations</td>
+</tr>
+<tr>
+<td><strong>Document Vault</strong></td>
+<td><code>/documents</code></td>
+<td>Page</td>
+<td>Split-screen reader, contextual risk & clause analysis</td>
+</tr>
+<tr>
+<td><strong>Drafting Studio</strong></td>
+<td><code>/drafting</code></td>
+<td>Page</td>
+<td>14 Indian legal templates, tone selector, export</td>
+</tr>
+<tr>
+<td><strong>Authorities Library</strong></td>
+<td><code>/authorities</code></td>
+<td>Page</td>
+<td>BNS/BNSS/BSA vs IPC/CrPC/IEA comparative browser</td>
+</tr>
+<tr>
+<td><strong>Firm Management</strong></td>
+<td><code>/firm</code></td>
+<td>Page</td>
+<td>Law chamber team roster, RBAC (Partner/Associate/Admin)</td>
+</tr>
+<tr>
+<td><strong>Billing & Quotas</strong></td>
+<td><code>/billing</code></td>
+<td>Page</td>
+<td>Quota meters, token tracking, 1-click upgrades</td>
+</tr>
+<tr>
+<td><strong>User Settings</strong></td>
+<td><code>/settings</code></td>
+<td>Page</td>
+<td>Advocate profile, bar enrollment, preferences</td>
+</tr>
+<tr>
+<td><strong>Admin Console</strong></td>
+<td><code>/admin</code></td>
+<td>Page</td>
+<td>System health, feature flags, audit trail, indexing</td>
+</tr>
+<tr>
+<td><strong>API Backend</strong></td>
+<td><code>17 route handlers in /api/*</code></td>
+<td>API</td>
+<td>Serverless REST endpoints with tenant isolation</td>
+</tr>
+</tbody></table>
+<hr class="divider" />
+<h2 class="section-title">5. Ethical, Regulatory & Security Framework</h2>
+<ul>
+<li><strong>Bar Council of India Rule 36 Compliance</strong>: Strict non-advertising posture; operations confined to internal chambers research.</li>
+<li><strong>Zero-Hallucination Policy</strong>: Visual warnings on unverified citations and watermarks on synthetic demonstration records.</li>
+<li><strong>Mandatory Disclaimers</strong>: All drafts and analyses include statutory notices requiring advocate verification prior to court filing.</li>
+<li><strong>Cryptographic Audit Trail</strong>: Every user action is logged with an immutable SHA-256 hash for enterprise compliance audits.</li>
+</ul>
+
+  <div class="footer-disclaimer">
+    NYAYAAI AI-Powered Indian Legal Intelligence Platform &bull; Confidential & Proprietary Manual &bull; September 2026 &bull; Compliant with Bar Council of India Standards
+  </div>
+
+</body>
+</html>
